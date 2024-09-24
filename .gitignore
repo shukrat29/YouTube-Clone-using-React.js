@@ -8,6 +8,8 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
+src/utils/constants.jsx
+.env
 dist
 dist-ssr
 *.local
