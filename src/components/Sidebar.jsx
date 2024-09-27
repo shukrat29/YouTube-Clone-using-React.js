@@ -1,17 +1,26 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
+  const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
+
+  // Early return
+  if (!isMenuOpen) return null;
+
   return (
     <div className="sidebar p-5 shadow-lg w-48">
       <ul className="font-semibold pb-4">
-        <li className="flex items-center pb-3">
-          <img
-            className="h-6 mr-2"
-            alt="home-logo"
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShJ748_cKz-kIUZ5cpPwApfzq57vStYEA6p9GhQ2aZB9TSRfRxTQIjjJOxBw&s"
-          />
-          Home
-        </li>
+        <Link to="/">
+          <li className="flex items-center pb-3">
+            <img
+              className="h-6 mr-2"
+              alt="home-logo"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShJ748_cKz-kIUZ5cpPwApfzq57vStYEA6p9GhQ2aZB9TSRfRxTQIjjJOxBw&s"
+            />
+            Home
+          </li>
+        </Link>
 
         <li className="flex items-center pb-3">
           <img

@@ -10,6 +10,8 @@ const Lists = [
   "Cricket",
   "Podcasts",
   "Information Technology",
+  "AI",
+  "Music of Nepal",
 ];
 const ButtonList = () => {
   return (

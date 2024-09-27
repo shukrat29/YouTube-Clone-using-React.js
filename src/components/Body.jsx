@@ -1,12 +1,13 @@
 import React from "react";
 import Sidebar from "./Sidebar";
-import MainContainer from "./MainContainer";
+import { Outlet } from "react-router-dom";
 
 const Body = () => {
   return (
     <div className="flex">
       <Sidebar />
-      <MainContainer />
+      {/* Outlet contains MainContainer=(ButtonList and VideoContainer) and WatchPage. displays one of them, according to appRouter */}
+      <Outlet />
     </div>
   );
 };
