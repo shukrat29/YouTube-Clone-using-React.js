@@ -6,7 +6,6 @@ const Body = () => {
   return (
     <div className="flex">
       <Sidebar />
-      {/* Outlet contains MainContainer=(ButtonList and VideoContainer) and WatchPage. displays one of them, according to appRouter */}
       <Outlet />
     </div>
   );

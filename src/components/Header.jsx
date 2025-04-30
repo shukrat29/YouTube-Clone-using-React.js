@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { IoSearchOutline } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
-import { toggleMenu } from "../utils/appSlice";
+import { toggleMenu } from "../redux/appSlice";
 import { YOUTUBE_SEARCH_API } from "../utils/constants";
-import { chacheResults } from "../utils/searchSlice";
+import { chacheResults } from "../redux/searchSlice";
 
 const Header = () => {
   const [searchQuery, setSearchQuery] = useState("");
