@@ -45,7 +45,7 @@ const Header = () => {
   };
 
   return (
-    <div className="flex justify-between m-2 p-5 shadow-lg">
+    <div className="flex justify-between gap-11 md:gap-0 m-2 p-5 shadow-lg">
       <div className="flex">
         <img
           onClick={toggleMenuHandler}
@@ -61,43 +61,45 @@ const Header = () => {
         />
       </div>
 
-      <div className=" px-10 ">
-        <div className="flex">
-          <input
-            className="w-1/2 border border-gray-400 p-2 rounded-l-full"
-            type="text"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            onFocus={() => setShowSuggestions(true)}
-            onBlur={() => setShowSuggestions(false)}
-          />
-          <button className="border border-gray-400 rounded-r-full px-5 p-2.5 pb-3.5 flex items-center justify-center bg-gray-100">
-            <IoSearchOutline />
-          </button>
-        </div>
-        {showSuggestions && (
-          <div className="fixed bg-white py-2 px-5 w-[37rem]">
-            <ul>
-              {suggestions.map((s) => (
-                <li
-                  key={s}
-                  className="flex items-center shadow-sm hover:bg-gray-100"
-                >
-                  <IoSearchOutline />
-                  {s}
-                </li>
-              ))}
-            </ul>
+      <div className="flex">
+        <div className=" ">
+          <div className="flex">
+            <input
+              className="w-1/2 border border-gray-400 p-2 rounded-l-full"
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              onFocus={() => setShowSuggestions(true)}
+              onBlur={() => setShowSuggestions(false)}
+            />
+            <button className="border border-gray-400 rounded-r-full px-5 p-2.5 pb-3.5 flex items-center justify-center bg-gray-100">
+              <IoSearchOutline />
+            </button>
           </div>
-        )}
-      </div>
+          {showSuggestions && (
+            <div className="fixed bg-white py-2 px-5 w-[37rem]">
+              <ul>
+                {suggestions.map((s) => (
+                  <li
+                    key={s}
+                    className="flex items-center shadow-sm hover:bg-gray-100"
+                  >
+                    <IoSearchOutline />
+                    {s}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
 
-      <div className="">
-        <img
-          className="h-10"
-          alt="user-icon"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ891HLuugNKthcStMIQ3VD_phd6XrcYAhkjA&s"
-        />
+        <div className="">
+          <img
+            className="h-10"
+            alt="user-icon"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ891HLuugNKthcStMIQ3VD_phd6XrcYAhkjA&s"
+          />
+        </div>
       </div>
     </div>
   );

@@ -5,12 +5,14 @@ const VideoCard = ({ info }) => {
   const { likeCount, viewCount } = info.statistics;
 
   return (
-    <div className="p-2 m-2 w-72">
+    <div className="md:p-2 md:m-2 w-full md:w-72">
       <img src={thumbnails.high.url} />
-      <h1 className="font-bold">{title}</h1>
-      <h2>{channelTitle}</h2>
-      <h3>{likeCount} Likes</h3>
-      <h3>{viewCount} Views</h3>
+      <div className="p-2">
+        <h1 className="font-bold">{title}</h1>
+        <h2>{channelTitle}</h2>
+        <h3>{likeCount} Likes</h3>
+        <h3>{viewCount} Views</h3>
+      </div>
     </div>
   );
 };
