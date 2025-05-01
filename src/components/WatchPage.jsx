@@ -7,7 +7,6 @@ import LiveChat from "./LiveChat";
 
 const WatchPage = () => {
   const [searchParams] = useSearchParams();
-
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -15,25 +14,30 @@ const WatchPage = () => {
   }, []);
 
   return (
-    <div className="flex flex-col w-full">
-      <div className="px-5 flex w-full">
-        <div className="">
+    <div className="flex flex-col w-full px-2 md:px-4">
+      <div className="flex flex-col lg:flex-row w-full gap-4">
+        {/* Video Section */}
+        <div className="w-full lg:w-[70%] aspect-video">
           <iframe
-            width="1300"
-            height="600"
-            src={"https://www.youtube.com/embed/" + searchParams.get("v")}
+            className="w-full h-full rounded-lg"
+            src={`https://www.youtube.com/embed/${searchParams.get("v")}`}
             title="YouTube video player"
-            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen
           ></iframe>
         </div>
-        <div className="w-full">
+
+        {/* Live Chat */}
+        <div className="w-full lg:w-[30%] max-h-[500px] overflow-y-auto">
           <LiveChat />
         </div>
       </div>
-      <CommentContainer />
+
+      {/* Comments */}
+      <div className="mt-6">
+        <CommentContainer />
+      </div>
     </div>
   );
 };

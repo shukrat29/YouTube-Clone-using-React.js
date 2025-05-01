@@ -8,7 +8,11 @@ const Sidebar = () => {
   if (!isMenuOpen) return null;
 
   return (
-    <div className="sidebar p-8 shadow-lg w-48">
+    <div
+      className={`sidebar p-8 shadow-lg w-48 bg-white z-50 ${
+        isMenuOpen ? "block" : "hidden"
+      } md:block`}
+    >
       <ul className="font-semibold pb-4">
         <Link to="/">
           <li className="flex items-center pb-3">
