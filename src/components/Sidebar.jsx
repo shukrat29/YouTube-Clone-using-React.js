@@ -5,11 +5,10 @@ import { Link } from "react-router-dom";
 const Sidebar = () => {
   const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
 
-  // Early return
   if (!isMenuOpen) return null;
 
   return (
-    <div className="sidebar p-5 shadow-lg w-48">
+    <div className="sidebar p-8 shadow-lg w-48">
       <ul className="font-semibold pb-4">
         <Link to="/">
           <li className="flex items-center pb-3">

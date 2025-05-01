@@ -9,13 +9,10 @@ const Lists = [
   "Cooking",
   "Cricket",
   "Podcasts",
-  "Information Technology",
-  "AI",
-  "Music of Nepal",
 ];
 const ButtonList = () => {
   return (
-    <div className="flex">
+    <div className="flex flex-wrap">
       {Lists.map((btnName, index) => (
         <Button key={index} name={btnName} />
       ))}

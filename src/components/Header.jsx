@@ -12,13 +12,8 @@ const Header = () => {
 
   const searchCache = useSelector((store) => store.search);
   const dispatch = useDispatch();
-  console.log(searchQuery);
 
   useEffect(() => {
-    // API call
-    // make an api call after every key press
-    // but if the difference between 2 api calls is <200ms decline the api call
-
     const timer = setTimeout(() => {
       if (searchCache[searchQuery]) {
         setSuggestions(searchCache[searchQuery]);
@@ -35,7 +30,6 @@ const Header = () => {
   const getSearchSuggestions = async () => {
     const data = await fetch(YOUTUBE_SEARCH_API + searchQuery);
     const json = await data.json();
-    console.log(json[1]);
     setSuggestions(json[1]);
 
     // update cache
@@ -51,8 +45,8 @@ const Header = () => {
   };
 
   return (
-    <div className="grid grid-flow-col m-2 p-5 shadow-lg">
-      <div className="flex col-span-1">
+    <div className="flex justify-between m-2 p-5 shadow-lg">
+      <div className="flex">
         <img
           onClick={toggleMenuHandler}
           className="h-11 cursor-pointer"
@@ -67,7 +61,7 @@ const Header = () => {
         />
       </div>
 
-      <div className="col-span-10 px-10 ">
+      <div className=" px-10 ">
         <div className="flex">
           <input
             className="w-1/2 border border-gray-400 p-2 rounded-l-full"
@@ -98,7 +92,7 @@ const Header = () => {
         )}
       </div>
 
-      <div className="col-span-1">
+      <div className="">
         <img
           className="h-10"
           alt="user-icon"
